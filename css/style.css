@@ -1,0 +1,103 @@
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+html, body, #map-canvas {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.page-header {
+	position: absolute;
+	z-index: 2;
+	background: white;
+	top: 20px;
+	left: 20px;
+	width: 450px;
+	height: 100px;
+	text-align: center;
+}
+
+.list {
+	list-style-type: none;
+	padding-left: 20px;
+}
+
+.box{
+	width: 350px;
+	padding: 5px;
+	border: 5px solid #d1d1e0;
+	margin: 5px;
+	background-color: #ffffff;
+}
+
+.box:hover {
+	color: #003399;
+	background-color: #fff5e5;
+	cursor: pointer;
+}
+
+#nav,
+.info {
+	z-index: 1;
+	width: 480px;
+}
+
+#nav {
+	overflow: auto;
+	position: absolute;
+	max-height: 85%;
+	padding: 90px 0 10px 0;
+	background-color: rgba(255, 255, 255, 0.6);
+	top: 30px;
+	left: 10px;
+	border-radius: 10px;
+}
+
+#nav button {
+	font-size: 12pt;
+	font-weight: 100;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	margin: 45px 0 0 10px;
+	padding: 5px 30px;
+	width: 250px;
+	border-radius: 5px;
+	background-color: #737373;
+}
+
+#nav h2:hover {
+	background-color: #404040;
+}
+
+#content {
+	font-size: 12pt;
+}
+
+/* Adjust settings for mobile */
+@media screen and (max-width: 450px) {
+	.page-header{
+		width: 300px;
+		left: 7px;
+	}
+
+	#nav, .info {
+		width: 300px;
+		top: 70px;
+	}
+
+	#nav h2 {
+		margin-top: 85px;
+		margin-left: 2px;
+	}
+
+	.box{
+		width: 250px;
+	}
+}
