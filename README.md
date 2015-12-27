@@ -7,4 +7,4 @@ You may either click on a marker on the map to see more details about each resta
 Installation
 ------------
 To run the file on your local machine, you may either clone the repository using GIT and open the index.html file with your favorite browser.
-Alternatively, you can simply view the project here:
+Alternatively, you can simply view the project here: http://debbk.github.io/project5
