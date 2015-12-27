@@ -82,14 +82,48 @@ html, body, #map-canvas {
 
 /* Adjust settings for mobile */
 @media screen and (max-width: 450px) {
-	.page-header{
+	.page-header {
+		position: absolute;
+		background: white;
+		top: 0px;
+		left: 0px;
 		width: 300px;
 		left: 7px;
+		height: 80px;
+		font-size: 10pt;
+	}
+	.page-header h1{
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	.page-header input{
+		font-size: 8pt;
+	}
+
+	#nav {
+		overflow: auto;
+		position: absolute;
+		max-height: 85%;
+		padding: 0px 0 7px 0;
+		background-color: rgba(255, 255, 255, 0.6);
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+		font-size: 8pt;
+	}
+	#nav button {
+		font-size: 9pt;
 	}
 
 	#nav, .info {
 		width: 300px;
 		top: 70px;
+	}
+	#content {
+		font-size: 8pt;
+	}
+	#content h4, h5{
+		font-size: 8pt;
 	}
 
 	#nav h2 {
