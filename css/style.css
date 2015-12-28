@@ -82,9 +82,8 @@ html, body, #map-canvas {
 
 /* Adjust settings for mobile */
 @media screen and (max-width: 450px) {
+
 	.page-header {
-		position: absolute;
-		background: white;
 		top: 0px;
 		left: 0px;
 		width: 300px;
@@ -101,8 +100,6 @@ html, body, #map-canvas {
 	}
 
 	#nav {
-		overflow: auto;
-		position: absolute;
 		max-height: 85%;
 		padding: 0px 0 7px 0;
 		background-color: rgba(255, 255, 255, 0.6);

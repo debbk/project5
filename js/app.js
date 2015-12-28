@@ -58,8 +58,9 @@ function googleSuccess() {
 		var mapOptions = {
 				map: self.mapLoad,
 				center: toronto,
-				zoom: 12,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
+				zoom: 11,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				draggable: true
 			};
 		self.map = new google.maps.Map(self.mapCanvas, mapOptions);
 		//arrays
@@ -90,6 +91,12 @@ function googleSuccess() {
 				clicked.setAnimation(google.maps.Animation.BOUNCE);
 			}
 		};
+
+		//Close list view if a place is clicked
+		$('.list').click(function(){
+			self.toggle1();
+		});
+
 		//Initialize map
 		self.placeList.forEach(function(place) {
 		//Foursquare API
