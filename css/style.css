@@ -82,7 +82,6 @@ html, body, #map-canvas {
 
 /* Adjust settings for mobile */
 @media screen and (max-width: 450px) {
-
 	.page-header {
 		top: 0px;
 		left: 0px;
@@ -91,10 +90,12 @@ html, body, #map-canvas {
 		height: 80px;
 		font-size: 10pt;
 	}
+
 	.page-header h1{
 		font-size: 10pt;
 		font-weight: bold;
 	}
+
 	.page-header input{
 		font-size: 8pt;
 	}
@@ -108,6 +109,7 @@ html, body, #map-canvas {
 		border-radius: 10px;
 		font-size: 8pt;
 	}
+
 	#nav button {
 		font-size: 9pt;
 	}
@@ -116,9 +118,11 @@ html, body, #map-canvas {
 		width: 300px;
 		top: 70px;
 	}
+
 	#content {
 		font-size: 8pt;
 	}
+
 	#content h4, h5{
 		font-size: 8pt;
 	}

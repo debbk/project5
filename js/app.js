@@ -91,12 +91,16 @@ function googleSuccess() {
 				clicked.setAnimation(google.maps.Animation.BOUNCE);
 			}
 		};
-
 		//Close list view if a place is clicked
 		$('.list').click(function(){
 			self.toggle1();
 		});
-
+		//Close infoWindow if another is opened
+		function closeInfowindow() {
+			self.placeList.forEach(function(place) {
+				place.marker.infoWindow.close();
+			});
+		};
 		//Initialize map
 		self.placeList.forEach(function(place) {
 		//Foursquare API
@@ -130,11 +134,16 @@ function googleSuccess() {
 									'<p>' + place.address() + '</p>' +
 									'<p>' + place.cuisine() + '</p>' +
 									'<p>' + place.postalcode() + '</p>' + '</div>';
-				var infowindow = new google.maps.InfoWindow({content: contentString});
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString,
+					maxHeight: 200
+				});
 				//Marker content
 				var coords = new google.maps.LatLng(place.lat(), place.lng());
 				var markerCredentials = new google.maps.Marker({
 					position: coords,
+					lat: place.lat(),
+					lng: place.lng(),
 					address: place.address(),
 					cuisine: place.cuisine(),
 					pname: place.pname(),
@@ -149,9 +158,9 @@ function googleSuccess() {
 				//Add Event Listener
 				google.maps.event.addListener(place.marker, "click", (function(marker, contentString, infoWindow){
 					return function(){
+						closeInfowindow();
 						infowindow.setContent(contentString);
 						infowindow.open(self.map,this);
-	//					self.map.panTo(place.marker.position);
 						self.toggleBounce(place.marker);
 					};
 				})(place.marker, contentString,infowindow));
@@ -189,6 +198,7 @@ function googleSuccess() {
 			this.marker = null;
 			this.rating = null;
 			this.openInfoWindow = function (){
+				closeInfowindow();
 				this.marker.infoWindow.open(self.map,this.marker);
 				self.toggleBounce(this.marker);
 			};
